@@ -2,7 +2,7 @@ import LoginForm from "@/components/login-form";
 import { requireUpTo } from "@/lib/progress";
 import { redirect } from "next/navigation";
 
-export const metadata = { title: "Stage 2 — caesarPlusPosition" };
+export const metadata = { title: "Stage 2 — cipherPlusPosition" };
 
 export default async function Page() {
   const gate = await requireUpTo(2, "logic");
@@ -17,7 +17,7 @@ export default async function Page() {
     <>
       <LoginForm
         action="/api/logic/logtwo"
-        title="Stage 2 — caesarPlusPosition"
+        title="Stage 2 — cipherPlusPosition"
         subtitle="Letters and numbers hold the key."
         hints={[
           "Start with the 2nd prime number.",

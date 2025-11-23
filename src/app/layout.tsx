@@ -2,6 +2,8 @@ import Link from "next/link";
 import "./globals.css";
 import { ReactNode } from "react";
 import { FaGithub } from "react-icons/fa";
+import { MdOutlineForum } from "react-icons/md";
+import { MdPrivacyTip } from "react-icons/md";
 
 export const metadata = {
   title: "loginDooM",
@@ -24,8 +26,23 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </div>
         <p className="absolute bottom-3 right-3 font-mono bg-zinc-700 p-2 shadow-[4px_4px_0px_#000]">
-          <Link href="https://github.com/kuwarte/loginDooM">
+          <Link href="/privacy-notice" title="Privacy Notice">
+            <MdPrivacyTip className="w-5 h-5 hover:text-emerald-400" />
+          </Link>
+        </p>
+
+        <p className="absolute bottom-3 right-14 font-mono bg-zinc-700 p-2 shadow-[4px_4px_0px_#000]">
+          <Link
+            href="https://github.com/kuwarte/loginDooM"
+            title="View Source Code"
+          >
             <FaGithub className="w-5 h-5 hover:text-emerald-400" />
+          </Link>
+        </p>
+
+        <p className="absolute bottom-3 right-25 font-mono bg-zinc-700 p-2 shadow-[4px_4px_0px_#000]">
+          <Link href="https://typecircle.vercel.app" title="Discuss Here!">
+            <MdOutlineForum className="w-5 h-5 hover:text-cyan-400" />{" "}
           </Link>
         </p>
       </body>

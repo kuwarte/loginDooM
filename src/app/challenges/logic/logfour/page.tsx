@@ -2,7 +2,7 @@ import LoginForm from "@/components/login-form";
 import { requireUpTo } from "@/lib/progress";
 import { redirect } from "next/navigation";
 
-export const metadata = { title: "Stage 4 — fibonacciPlusCaesarPlusSymmetry" };
+export const metadata = { title: "Stage 4 — fibonacciPlusROTPlusSymmetry" };
 
 export default async function Page() {
   const gate = await requireUpTo(4, "logic");
@@ -17,7 +17,7 @@ export default async function Page() {
     <>
       <LoginForm
         action="/api/logic/logfour"
-        title="Stage 4 — fibonacciPlusCaesarPlusSymmetry"
+        title="Stage 4 — fibonacciPlusROTPlusSymmetry"
         subtitle="A sequence of numbers holds the letters."
         hints={[
           "Use the 6th Fibonacci number and pad it to 3 digits",
