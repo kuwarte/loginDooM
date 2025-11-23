@@ -3,13 +3,11 @@ import { okWithCookie, hint } from "@/lib/responses";
 
 export async function POST(req: NextRequest) {
   const { username, password } = await req.json();
-
-  if (username === "triangle" && password === "integral") {
-    return okWithCookie(4, { next: "/challenges/logfive" });
+  if (username === "e3" && password === "33") {
+    return okWithCookie(2, { next: "/challenges/logic/logthree" }, "logic");
   }
-
   return hint(
     401,
-    "Well. If you can't really find any math-related just arrange this: elgnairt"
+    "2nd prime = 3 -> C. Shift +2 -> E. Username begins with E and ends with 3."
   );
 }

@@ -5,15 +5,15 @@ export const metadata = { title: "Stage 1 — caesarCipher" };
 export default function Page() {
   return (
     <LoginForm
-      action="/api/logone"
+      action="/api/web/logone"
       title="Stage 1 — caesarCipher"
       subtitle="Decrypt the password."
       hints={[
-        "Encrypted password: sdvvzrug",
+        "Encrypted password: jsadhkadjkhoweknsnsjcj",
         "Classic Caesar Cipher. 3 shift but what sign?",
-        "Is it negative or positive shift?",
+        "TrialAndError: Find the other hint for username",
       ]}
-      nextHref="/challenges/logtwo"
+      nextHref="/challenges/web/logtwo"
     />
   );
 }

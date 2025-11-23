@@ -6,17 +6,36 @@ export default function Home() {
       <details className="p-3 border">
         <summary className="cursor-pointer font-medium">Context</summary>
         <ul className="list-disc pl-6 mt-2 text-sm">
-          <li>You are stuck in login loop</li>
-          <li>You are free to research</li>
+          <li>You are stuck in LOGIN LOOP</li>
+          <li>You are free to RESEARCH</li>
           <li>Find your way to escape this loginDooM</li>
-          <li>You can add the next stage into the path i.e. /logtwo</li>
+          <li>
+            Add to path if finish to that stage <br />
+            <span className="font-mono bg-zinc-800 px-1 rounded-sm">
+              /web/logtwo
+            </span>{" "}
+            OR{" "}
+            <span className="font-mono bg-zinc-800 px-1 rounded-sm">
+              /logic/logtwo
+            </span>
+          </li>
+          <li>Clear browser cookies to restart progress.</li>
         </ul>
       </details>
       <p className="font-mono text-emerald-400">
-        Start at{" "}
-        <Link className="font-semibold" href="/challenges/logone">
+        Start at Web Challenge <br />
+        {">> "}
+        <Link className="font-semibold" href="/challenges/web/logone">
           /logone
-        </Link>
+        </Link>{" "}
+        (Desktop)
+      </p>
+      <p className="font-mono text-emerald-400">
+        Start at Logic Challenge <br /> {">> "}
+        <Link className="font-semibold" href="/challenges/logic/logone">
+          /logone
+        </Link>{" "}
+        (Phone)
       </p>
     </main>
   );

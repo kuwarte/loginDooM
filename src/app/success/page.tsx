@@ -5,20 +5,25 @@ import { redirect } from "next/navigation";
 export const metadata = { title: "Success — All Stages Cleared" };
 
 export default async function Page() {
-  const gate = await requireUpTo(7);
-  if (!gate.ok)
+  const webGate = await requireUpTo(6, "web", true);
+  const logicGate = await requireUpTo(4, "logic", true);
+
+  if (!webGate.ok && !logicGate.ok) {
     redirect(
-      `/log${
-        ["one", "two", "three", "four", "five", "six"][gate.missingAt! - 1]
+      `/challenges/web/log${
+        ["one", "two", "three", "four", "five", "six"][webGate.missingAt! - 1]
       }`
     );
+  }
 
   return (
     <div className="bg-zinc-700">
       <Image
-        src="success.gif"
+        src="/success.gif"
         alt="brilliant!"
-        className="shadow-[inset_4px_4px_0px_#000] border border-zinc-900"
+        width={480}
+        height={320}
+        className="shadow-[inset_4px_4px_0px_#000000] border border-zinc-900"
       />
       <p className="font-mono text-emerald-400 mt-3">
         Tap the{" "}

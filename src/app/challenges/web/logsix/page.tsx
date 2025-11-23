@@ -8,14 +8,14 @@ export default async function Page() {
   const gate = await requireUpTo(6);
   if (!gate.ok)
     redirect(
-      `/log${
+      `/challenges/web/log${
         ["one", "two", "three", "four", "five", "six"][gate.missingAt! - 1]
       }`
     );
 
   return (
     <LoginForm
-      action="/api/logsix"
+      action="/api/web/logsix"
       title="Stage 6 — connectedPath"
       subtitle="Find the proper path to find the JSON page."
       hints={["What is the 20th prime number?"]}

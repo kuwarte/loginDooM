@@ -3,8 +3,10 @@ import { okWithCookie, hint } from "@/lib/responses";
 
 export async function POST(req: NextRequest) {
   const { username, password } = await req.json();
-  if (username === "v1ews0urce" && password === "look-at-the-css") {
-    return okWithCookie(2, { next: "/challenges/logthree" });
+
+  if (username === "ddld" && password === "800") {
+    return okWithCookie(4, { next: "/success" }, "logic");
   }
-  return hint(401, "Check the page source for credentials.");
+
+  return hint(401, "Padded version is: 00(6th fibonacci num).");
 }

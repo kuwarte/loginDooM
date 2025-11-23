@@ -9,12 +9,12 @@ export async function POST(req: NextRequest) {
     return hint(401, "Alphabets must be lowercase.");
   }
 
-  if (username === "caesarcipher3" && password === "password") {
-    return okWithCookie(1, { next: "/challenges/logtwo" });
+  if (username === "caesarcipher3" && password === "gpxaehxagheltbhkpkpgzg") {
+    return okWithCookie(1, { next: "/challenges/web/logtwo" });
   }
 
   return hint(
     401,
-    "Bonus: username is caesarcipher<concatenate the digit of shift>."
+    "More Hint Found!: username is caesarcipher + number of shift."
   );
 }

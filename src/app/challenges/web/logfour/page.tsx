@@ -8,7 +8,7 @@ export default async function Page() {
   const gate = await requireUpTo(4);
   if (!gate.ok)
     redirect(
-      `/log${
+      `/challenges/web/log${
         ["one", "two", "three", "four", "five", "six"][gate.missingAt! - 1]
       }`
     );
@@ -16,14 +16,14 @@ export default async function Page() {
   return (
     <>
       <LoginForm
-        action="/api/logfour"
+        action="/api/web/logfour"
         title="Stage 4 — anagramDuo"
         subtitle="Rearrange the letters."
         hints={[
           "The username and password is math related anagram",
           "example: username=='anagram' password=='nagaram'",
         ]}
-        nextHref="/challenges/logfive"
+        nextHref="/challenges/web/logfive"
       />
     </>
   );

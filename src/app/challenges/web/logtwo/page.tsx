@@ -9,7 +9,7 @@ export default async function Page() {
   const gate = await requireUpTo(2);
   if (!gate.ok)
     redirect(
-      `/log${
+      `/challenges/web/log${
         ["one", "two", "three", "four", "five", "six"][gate.missingAt! - 1]
       }`
     );
@@ -17,7 +17,7 @@ export default async function Page() {
   return (
     <>
       <LoginForm
-        action="/api/logtwo"
+        action="/api/web/logtwo"
         title="Stage 2 — viewSrc"
         subtitle="Some secrets hide in plain sight :>."
         hints={[
@@ -25,7 +25,7 @@ export default async function Page() {
           "Check comments?",
           "find _next/static",
         ]}
-        nextHref="/challenges/logthree"
+        nextHref="/challenges/web/logthree"
       />
     </>
   );

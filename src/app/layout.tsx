@@ -1,6 +1,7 @@
 import Link from "next/link";
 import "./globals.css";
 import { ReactNode } from "react";
+import { FaGithub } from "react-icons/fa";
 
 export const metadata = {
   title: "loginDooM",
@@ -22,6 +23,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </header>
           {children}
         </div>
+        <p className="absolute bottom-3 right-3 font-mono bg-zinc-700 p-2 shadow-[4px_4px_0px_#000]">
+          <Link href="https://github.com/kuwarte/loginDooM">
+            <FaGithub className="w-5 h-5 hover:text-emerald-400" />
+          </Link>
+        </p>
       </body>
     </html>
   );

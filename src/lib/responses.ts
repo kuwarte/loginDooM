@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 
-export function okWithCookie(stage: number, body: Record<string, unknown>) {
+export function okWithCookie(
+  stage: number,
+  body: Record<string, unknown>,
+  type: "web" | "logic" = "web"
+) {
   const res = NextResponse.json({ ok: true, ...body });
-  res.cookies.set(`stage${stage}`, "1", {
+  res.cookies.set(`${type}-stage${stage}`, "1", {
     httpOnly: true,
     sameSite: "lax",
     path: "/",
@@ -12,7 +16,5 @@ export function okWithCookie(stage: number, body: Record<string, unknown>) {
 }
 
 export function hint(status: number, message: string) {
-  const res = NextResponse.json({ ok: false, message }, { status });
-  res.headers.set("X-Hint", message);
-  return res;
+  return NextResponse.json({ ok: false, message }, { status });
 }
