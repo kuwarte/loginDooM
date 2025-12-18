@@ -1,1 +1,127 @@
 @import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --primary: #000000;
+  --accent: #ffffff;
+  --secondary: #1a1a1a;
+  --tertiary: #333333;
+  --quaternary: #4d4d4d;
+  --quinary: #666666;
+  --senary: #808080;
+  --septenary: #999999;
+  --octonary: #b3b3b3;
+  --nonary: #cccccc;
+  --denary: #e6e6e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  overflow-x: hidden;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.postmodern-text {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-rendering: geometricPrecision;
+}
+
+.deconstructed-border {
+  border-left: 8px solid #333333;
+  border-top: 3px solid #666666;
+  border-right: 12px solid #999999;
+  border-bottom: 6px solid #cccccc;
+  box-shadow: -15px 10px 0px #1a1a1a, 8px -5px 0px #4d4d4d;
+}
+
+.asymmetric-button {
+  border-left: 4px solid #000;
+  border-top: 2px solid #000;
+  border-right: 8px solid #000;
+  border-bottom: 6px solid #000;
+  box-shadow: -8px 12px 0px #000;
+  transition: all 0.2s ease;
+  transform: skew(-2deg, 1deg);
+}
+
+.asymmetric-button:hover {
+  transform: skew(1deg, -1deg) translate(4px, -2px);
+  box-shadow: -12px 8px 0px #000;
+}
+
+.fragmented-bg {
+  background: 
+    linear-gradient(23deg, #1a1a1a 0%, transparent 30%),
+    linear-gradient(67deg, #333333 20%, transparent 50%),
+    linear-gradient(145deg, #666666 40%, transparent 70%),
+    linear-gradient(289deg, #999999 60%, transparent 90%);
+}
+
+.glitch-text {
+  position: relative;
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitch-anim 0.5s infinite linear alternate-reverse;
+  color: #333333;
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+  color: #666666;
+  z-index: -2;
+}
+
+@keyframes glitch-anim {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { transform: translate(0); }
+  20% { transform: translate(2px, -2px); }
+  40% { transform: translate(-2px, 2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  10% { transform: skew(-1deg); }
+  20% { transform: skew(1deg); }
+  30% { transform: skew(0deg); }
+  40% { transform: skew(1deg); }
+  50% { transform: skew(-1deg); }
+  60% { transform: skew(0deg); }
+  70% { transform: skew(-1deg); }
+  80% { transform: skew(1deg); }
+  90% { transform: skew(0deg); }
+  100% { transform: skew(-1deg); }
+}

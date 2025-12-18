@@ -3,11 +3,10 @@ import { okWithCookie, hint } from "@/lib/responses";
 
 export async function POST(req: NextRequest) {
   const { username, password } = await req.json();
-  if (username === "e3" && password === "33") {
+  
+  if (username === "g7" && password === "77") {
     return okWithCookie(2, { next: "/challenges/logic/logthree" }, "logic");
   }
-  return hint(
-    401,
-    "2nd prime = 3 -> C. Shift +2 -> E. Username begins with E and ends with 3."
-  );
+  
+  return hint(401, "3 + 4 = 7 -> G. Username is G+7, password is 77.");
 }

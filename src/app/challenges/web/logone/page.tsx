@@ -9,9 +9,9 @@ export default function Page() {
       title="Stage 1 — caesarCipher"
       subtitle="Decrypt the password."
       hints={[
-        "Encrypted password: jsadhkadjkhoweknsnsjcj",
-        "Classic Caesar Cipher. 3 shift but what sign?",
-        "TrialAndError: Find the other hint for username",
+        "The password is encrypted using Caesar cipher: jsadhkadjkhoweknsnsjcj",
+        "Caesar cipher shifts letters by 3 positions. Try both forward (+3) and backward (-3) shifts.",
+        "Look for clues about the username in the page source or network requests.",
       ]}
       nextHref="/challenges/web/logtwo"
     />
